@@ -1,0 +1,25 @@
+<div class="container">
+    <div *ngIf="getQuestion()" class="quiz-container">
+      <div class="menu">
+        <div class="gauge-container-wrapper">
+          <div class="gauge-title">Taux de liberté</div>
+          <div class="gauge-container">
+            <div class="gauge-bar" [style.width]="getGaugeValue() + '%'" [style.background-color]="getGaugeColor()">
+              <span class="gauge-text">{{ getGaugeValue() }}%</span>
+            </div>
+          </div>
+        </div>
+        <div class="question">{{questions[index].title}}</div>
+        <button (click)="nextQuestion()" [disabled]="!showAnswers">Next</button>
+      </div>
+      <img [src]="'/images/'+questions[index].img" alt="img" />
+      <div class="options">
+        <div *ngFor="let answer of questions[index].answers; let i = index" class="option"
+          [ngClass]="{ 'red': i === 0, 'blue': i === 1, 'green': i === 2, 'yellow': i === 3, 'disabled': showAnswers, 'win': questions[index].isGoodAnswer(i) }"
+          (click)="onOptionClick(i)">
+          <div class="value">{{ answer.value }}</div>
+          <div *ngIf="showAnswers" class="description">>> {{answer.description}}</div>
+        </div>
+      </div>
+    </div>
+  </div>

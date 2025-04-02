@@ -1,0 +1,15 @@
+
+
+Commande ng
+-> ng serve : lancer serveur
+-> ng build --prod : déployer projet
+-> ng test : nope don't use it
+-> ng generate component nom-du-composant : créer component
+
+-----------
+--A FAIRE--
+-----------
+
+-> SUPPRIMER APP !!!
+
+

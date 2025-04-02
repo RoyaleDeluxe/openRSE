@@ -1,0 +1,8 @@
+img {
+    width: 97vw; /* 100% de la largeur de la fenêtre */
+    height: 97vh; /* 100% de la hauteur de la fenêtre */
+    display: flex; /* Permet de centrer l’image si besoin */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Évite les débordements */
+  }
